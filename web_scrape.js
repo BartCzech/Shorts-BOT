@@ -20,11 +20,17 @@ async function generateVideo(prompt) {
 
   try {
     const browser = await puppeteer.launch({
+      args: [
+        "--disable-setuid-sandbox",
+        "--no-sandbox",
+        "--single-process",
+        "--no-zygote"
+      ],
       // slowMo: 100,
       // headless: false,
       // args: chromium.args,
       // defaultViewport: chromium.defaultViewport,
-      // executablePath: await chromium.executablePath,
+      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
       // ignoreHTTPSErrors: true,
     });
 
