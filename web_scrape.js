@@ -84,12 +84,16 @@ async function generateVideo(prompt) {
     // Proceed
     console.log("proceeding to create vid project");
     await page.click(".css-8aqpyn .css-1he72jf");
+    console.log("clicked 1");
     await delay(60000); // 60s - time for creating video
     await delay(60000); // 60s - time for creating video
 
     // Choosing Orientation
     // await page.screenshot({ path: "./tmp_screenshots/orientation_change.png" });
     await page.click(".css-t788js");
+    console.log("clicked 2");
+
+
     // let button2Clicked = false;
 
     // while (!button2Clicked) {
@@ -125,14 +129,17 @@ async function generateVideo(prompt) {
 
     // Expanding voiceover menu
     await page.click("#voiceover-menu-button");
+    console.log("clicked 3");
     await delay(5000);
 
     // Choosing aspect ratio
     await page.click("#voiceover-menu li");
+    console.log("clicked 4");
     await delay(5000);
 
     // Close popup advertisement
     await page.click(".voice-over-banner div svg");
+    console.log("clicked 5");
 
     // Choosing voice model
     await page.hover("#voiceTrack3034");
@@ -140,12 +147,15 @@ async function generateVideo(prompt) {
     // await page.screenshot({ path: "./tmp_screenshots/hover.png" });
     await delay(5000);
     await page.click("#voiceTrack3034 .css-1g747ue .apply-box span"); // common err
+    console.log("clicked 6");
     await delay(20000);
 
     // Change font
     await page.click("#template-styles-tab");
+    console.log("clicked 7");
     await delay(2000);
     await page.click("#style_d7eb227e-ff83-4d7b-98c1-6f0e5f3156f6");
+    console.log("clicked 8");
 
     // Increasing scene duration to 3s
     await page.hover("#scene-duration-container");
@@ -160,6 +170,7 @@ async function generateVideo(prompt) {
     //   path: "./tmp_screenshots/before_duration_change.png",
     // });
     await page.click(".css-1m9pwf3");
+    console.log("clicked 9");
     await delay(1000);
     // await page.screenshot({ path: "./tmp_screenshots/duration_change.png" });
 
@@ -168,6 +179,7 @@ async function generateVideo(prompt) {
     await delay(5000);
     // await page.screenshot({ path: "./tmp_screenshots/btn_gener.png" });
     await page.click("#btnGenerate");
+    console.log("clicked 10");
 
     let buttonClicked = false;
 
