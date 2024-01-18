@@ -90,6 +90,7 @@ async function generateVideo(prompt) {
 
     // Choosing Orientation
     // await page.screenshot({ path: "./tmp_screenshots/orientation_change.png" });
+    await page.waitForSelector('.css-t788js');
     await page.click(".css-t788js");
     console.log("clicked 2");
 
@@ -128,16 +129,19 @@ async function generateVideo(prompt) {
     await delay(1000);
 
     // Expanding voiceover menu
+    await page.waitForSelector('#voiceover-menu-button');
     await page.click("#voiceover-menu-button");
     console.log("clicked 3");
     await delay(5000);
 
     // Choosing aspect ratio
+    await page.waitForSelector('#voiceover-menu li');
     await page.click("#voiceover-menu li");
     console.log("clicked 4");
     await delay(5000);
 
     // Close popup advertisement
+    await page.waitForSelector('.voice-over-banner div svg');
     await page.click(".voice-over-banner div svg");
     console.log("clicked 5");
 
@@ -146,14 +150,17 @@ async function generateVideo(prompt) {
     await page.focus("#voiceTrack3034");
     // await page.screenshot({ path: "./tmp_screenshots/hover.png" });
     await delay(5000);
+    await page.waitForSelector('#voiceTrack3034 .css-1g747ue .apply-box span');
     await page.click("#voiceTrack3034 .css-1g747ue .apply-box span"); // common err
     console.log("clicked 6");
     await delay(20000);
 
     // Change font
+    await page.waitForSelector('#template-styles-tab');
     await page.click("#template-styles-tab");
     console.log("clicked 7");
     await delay(2000);
+    await page.waitForSelector('#style_d7eb227e-ff83-4d7b-98c1-6f0e5f3156f6');
     await page.click("#style_d7eb227e-ff83-4d7b-98c1-6f0e5f3156f6");
     console.log("clicked 8");
 
@@ -169,6 +176,7 @@ async function generateVideo(prompt) {
     // await page.screenshot({
     //   path: "./tmp_screenshots/before_duration_change.png",
     // });
+    await page.waitForSelector('.css-1m9pwf3');
     await page.click(".css-1m9pwf3");
     console.log("clicked 9");
     await delay(1000);
@@ -178,6 +186,7 @@ async function generateVideo(prompt) {
     await page.hover("#generate-button-dropdown a");
     await delay(5000);
     // await page.screenshot({ path: "./tmp_screenshots/btn_gener.png" });
+    await page.waitForSelector('#btnGenerate');
     await page.click("#btnGenerate");
     console.log("clicked 10");
 
